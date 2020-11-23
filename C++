@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+#include <time.h>
+#include "windows.h"
+#include <conio.h>
+using namespace std;
+int main()
+{
+	setlocale(0, "");
+	srand((unsigned int)time(0));
+	const int size1 = 2000;
+	const int size2 = 118; //На маленькую консоль 60 символов с пробелами, на большую 118.
+	int arr[size1][size2];
+	for (int i = 0; i < size1; i++)
+	{
+		for (int j = 0; j < size2; j++)
+		{
+			arr[i][j] = 0 + rand() % (1 - 0 + 1) + sin(rand());
+		}
+	}
+	cout.setf(ios::right);
+	for (int i = 0; i < size1; i++)
+	{
+		for (int j = 0; j < size2; j++)
+		{
+		    cout.width(1);
+			cout << " " << arr[i][j];
+		    Sleep(0.9999);
+	    }
+		cout << endl;
+    } 
+	system("pause");
+	return 0;
+}
